@@ -1,4 +1,4 @@
-# Test Cases for TODO App
+# Test cases for TODO app
 
 ## 1. Add a new TODO item
 
@@ -62,7 +62,7 @@
 **Expected result**:
 
 - No item is added.
-- Optional: an error message appears or the input is highlighted.
+- An error message 'Please enter a title' appears
 
 ---
 
