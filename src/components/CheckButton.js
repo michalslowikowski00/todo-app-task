@@ -28,6 +28,7 @@ function CheckButton({ checked, handleCheck }) {
       className={styles.svgBox}
       variants={boxVariants}
       onClick={() => handleCheck()}
+      data-testid="check-button"
     >
       <motion.svg
         className={styles.svg}

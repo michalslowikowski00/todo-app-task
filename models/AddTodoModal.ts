@@ -23,11 +23,3 @@ export class AddTodoModal {
     await this.addTaskButtonWithinModal.click();
   }
 }
-
-//await page.goto("http://localhost:3000");
-//await page.getByRole("button", { name: /add task/i }).click();
-// await expect(page.getByRole("heading", { name: /add todo/i })).toBeVisible();
-// page.locator("#title").fill("Buy a bike");
-// await page.locator("form").getByRole("button", { name: "Add Task" }).click();
-
-// await expect(page.getByText("Buy a bike")).toBeVisible();
