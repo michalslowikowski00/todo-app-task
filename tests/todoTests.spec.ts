@@ -62,4 +62,41 @@ describe("User", () => {
     const todoItem = page.getByTestId("todo-Buy a bike");
     await expect(todoItem).not.toBeVisible();
   });
+
+  test("should not be able to add empty TODO item", async ({ page }) => {
+    // given
+    const homepage = new Homepage(page);
+    await homepage.goto();
+    homepage.addTaskButtonWithinHomepage;
+
+    // when
+    const addTodoModal = new AddTodoModal(page);
+    await addTodoModal.addTask(""); // Try to add empty task
+    addTodoModal.addTaskButtonWithinModal.click();
+
+    // then
+    const error = page.getByText("Please enter a title");
+    await expect(error).toBeVisible();
+  });
+
+  test("should be able to see TODO items after reload the page", async ({
+    page,
+  }) => {
+    // given
+    const homepage = new Homepage(page);
+    await homepage.goto();
+    homepage.addTaskButtonWithinHomepage;
+
+    // when
+    const addTodoModal = new AddTodoModal(page);
+    await addTodoModal.addTask("Buy a bike");
+    await addTodoModal.addTaskButtonWithinModal.click();
+
+    // and
+    await page.reload();
+
+    // then
+    const todoItem = page.getByTestId("todo-Buy a bike");
+    await expect(todoItem).toBeVisible();
+  });
 });
