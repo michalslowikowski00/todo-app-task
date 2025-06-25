@@ -15,22 +15,34 @@ describe("As a user I", () => {
     modal,
   }) => {
     // when
-    const checkButton = homepage.getByTestId("check-button");
-    checkButton.click();
+    const checkButton = new Homepage(homepage).checkButton;
+    await checkButton.click();
 
     // then
     const todoItem = homepage.getByTestId("todo-Buy a bike");
-    await expect(todoItem).toHaveClass(/todoItem_todoText--completed/);
+    await expect(todoItem).toHaveClass(/todoItem_todoText--completed/i);
   });
 
   test("should be able delete a TODO item", async ({ homepage, modal }) => {
     // when
-    const deleteButton = homepage.getByTestId("delete-button");
+    const deleteButton = new Homepage(homepage).deleteButton;
     await deleteButton.click();
 
     // then
     const todoItem = homepage.getByTestId("todo-Buy a bike");
     await expect(todoItem).not.toBeVisible();
+  });
+
+  test("should be able to see TODO item after reload the page", async ({
+    homepage,
+    modal,
+  }) => {
+    // when
+    await homepage.reload();
+
+    // then
+    const todoItem = homepage.getByTestId("todo-Buy a bike");
+    await expect(todoItem).toBeVisible();
   });
 
   test("should not be able to add empty TODO item", async ({ page }) => {
@@ -45,19 +57,7 @@ describe("As a user I", () => {
     addTodoModal.addTaskButton.click();
 
     // then
-    const errorMessage = page.getByText("Please enter a title");
+    const errorMessage = new Homepage(page).errorMessage;
     await expect(errorMessage).toBeVisible();
-  });
-
-  test("should be able to see TODO item after reload the page", async ({
-    homepage,
-    modal,
-  }) => {
-    // when
-    await homepage.reload();
-
-    // then
-    const todoItem = homepage.getByTestId("todo-Buy a bike");
-    await expect(todoItem).toBeVisible();
   });
 });
