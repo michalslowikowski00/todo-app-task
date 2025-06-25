@@ -56,8 +56,8 @@
 **Preconditions** Application is loaded.
 
 **Steps**:
-
-1. Click the "Add" button without typing anything in the input.
+1. Click the "Add Tak" button on the homepage.
+2. Click the "Add Tak" button without typing anything in the input.
 
 **Expected result**:
 
