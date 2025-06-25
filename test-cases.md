@@ -7,9 +7,9 @@
 **Preconditions**: Application is loaded successfully.
 
 **Steps**:
-
-1. Type "Buy bike" into the input field.
-2. Click the "Add" button.
+1. Click the "Add Task" button.
+2. Type "Buy a bike" into the input field.
+3. Click the "Add Task" button.
 
 **Expected result**:
 
@@ -56,8 +56,8 @@
 **Preconditions** Application is loaded.
 
 **Steps**:
-1. Click the "Add Tak" button on the homepage.
-2. Click the "Add Tak" button without typing anything in the input.
+1. Click the "Add Task" button on the homepage.
+2. Click the "Add Task" button without typing anything in the input.
 
 **Expected result**:
 
@@ -74,8 +74,7 @@
 
 **Steps**:
 
-1. Add a TODO item.
-2. Reload the page.
+1. Reload the page.
 
 **Expected result**:
 
