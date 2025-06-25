@@ -3,7 +3,7 @@
 To run the tests for this project using [Playwright](https://playwright.dev/), follow these steps:
 
 1. **Clone the repository**  
-   Clone the project repository:
+   Clone the projects repository:
 
    ```bash
    git clone https://github.com/michalslowikowski00/https://github.com/michalslowikowski00/
@@ -35,15 +35,27 @@ To run the tests for this project using [Playwright](https://playwright.dev/), f
 4. **Run tests**  
    Use the following command to execute the Playwright test suite:
 
+   Go to the root dir
+
    ```bash
    cd todo-app-task
+   ```
+
+   Run app server
+
+   ```bash
+   npm start
+   ```
+
+   Run tests
+
+   ```bash
    npx playwright test
    ```
 
    or
 
    ```bash
-   cd todo-app-task
    yarn playwright test
    ```
 
