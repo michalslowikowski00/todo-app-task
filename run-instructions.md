@@ -3,11 +3,8 @@
 To run the tests for this project using [Playwright](https://playwright.dev/), follow these steps:
 
 1. **Clone the repository**  
-   Clone the projects repository:
-
    ```bash
    git clone https://github.com/michalslowikowski00/https://github.com/michalslowikowski00/
-   cd todo-app-task
    ```
 
 2. **Install dependencies**  
@@ -30,7 +27,7 @@ To run the tests for this project using [Playwright](https://playwright.dev/), f
    npm init playwright@latest
    ```
 
-   In case of any issues go [Playwright](https://playwright.dev/docs/intro#installing-playwright)
+   In case of any issues go and check [Playwright](https://playwright.dev/docs/intro#installing-playwright)
 
 4. **Run tests**  
    Use the following command to execute the Playwright test suite:
