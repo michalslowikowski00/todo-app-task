@@ -20,6 +20,5 @@ export class AddTodoModal {
   async addTask(title: string) {
     await expect(this.header).toBeVisible();
     await this.input.fill(title);
-    await this.addTaskButtonWithinModal.click();
   }
 }
