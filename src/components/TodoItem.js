@@ -58,6 +58,7 @@ function TodoItem({ todo }) {
                 styles.todoText,
                 todo.status === 'complete' && styles['todoText--completed'],
               ])}
+              data-testid={`todo-${todo.title}`}
             >
               {todo.title}
             </p>
@@ -73,6 +74,7 @@ function TodoItem({ todo }) {
             onKeyDown={() => handleDelete()}
             tabIndex={0}
             role="button"
+            data-testid="delete-button"
           >
             <MdDelete />
           </div>
