@@ -2,26 +2,16 @@ import { expect, type Locator, type Page } from "@playwright/test";
 
 export class Homepage {
   readonly page: Page;
-  readonly addTaskButtonWithinHomepage: Locator;
+  readonly addTaskButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.addTaskButtonWithinHomepage = page
-      .getByRole("button", {
-        name: /add task/i,
-      })
-      .click();
+    this.addTaskButton = page.getByRole("button", {
+      name: /add task/i,
+    });
   }
 
   async goto() {
     await this.page.goto("http://localhost:3000");
-  }
-
-  async validateAddedTask(taskName: string) {
-    await expect(this.page.getByText(taskName)).toBeVisible();
-  }
-
-  async markTaskAsCompleted(taskName: string) {
-    await this.page.getByText(taskName).click();
   }
 }
