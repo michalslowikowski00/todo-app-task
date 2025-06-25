@@ -5,14 +5,14 @@ export class AddTodoModal {
   readonly header: Locator;
   readonly input: Locator;
   readonly modal: Locator;
-  readonly addTaskButtonWithinModal: Locator;
+  readonly addTaskButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.header = page.getByRole("heading", { name: /add todo/i });
     this.input = page.locator("#title");
     this.modal = page.locator("form");
-    this.addTaskButtonWithinModal = this.modal.getByRole("button", {
+    this.addTaskButton = this.modal.getByRole("button", {
       name: "Add Task",
     });
   }
