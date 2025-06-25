@@ -20,4 +20,12 @@ export class Homepage {
   async validateAddedTask(taskName: string) {
     await expect(this.page.getByText(taskName)).toBeVisible();
   }
+
+  async markTaskAsCompleted(taskName: string) {
+    await this.page.getByText(taskName).click();
+  }
+
+  async validateTaskCompleted(taskName: string) {
+    await expect(this.page.getByText(taskName)).toHaveClass(/todoItem_todoText--completed__gEH+W/);
+  }
 }

@@ -51,7 +51,8 @@
   "devDependencies": {
     "@playwright/test": "^1.53.1",
     "@types/node": "^24.0.3",
-    "eslint-config-wesbos": "^3.0.2",
+    "eslint-config-wesbos": "^3.2.3",
+    "prettier": "^2.8.8",
     "typescript": "^5.8.3"
   }
 }
